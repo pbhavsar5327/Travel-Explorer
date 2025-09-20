@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Explorer - Destinations</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: "Poppins", sans-serif;
+      background:#f9f9f9;
+      color:#333;
+      scroll-behavior:smooth;
+    }
+
+    /* Navbar */
+    nav {
+      position:sticky;
+      top:0;
+      width:100%;
+      background:linear-gradient(90deg,#00b4d8,#7209b7);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:12px 20px;
+      z-index:1000;
+      box-shadow:0 3px 10px rgba(0,0,0,0.2);
+    }
+    nav .logo {
+      font-size:20px;
+      font-weight:bold;
+      color:#fff;
+    }
+    nav ul {
+      list-style:none;
+      display:flex;
+      gap:20px;
+    }
+    nav ul li a {
+      color:#fff;
+      font-size:15px;
+      padding:5px 8px;
+      border-radius:5px;
+      text-decoration:none;
+      transition:0.3s;
+    }
+    nav ul li a:hover { background:rgba(255,255,255,0.2); color:#ffdd00; }
+
+    /* Hero Slideshow */
+    .hero {
+      position:relative;
+      height:50vh;
+      width:100%;
+      overflow:hidden;
+    }
+    .hero img {
+      width:100%;
+      height:50vh;
+      object-fit:cover;
+      position:absolute;
+      top:0; left:0;
+      opacity:0;
+      animation:slideShow 30s infinite;
+    }
+    .hero img:nth-child(1){animation-delay:0s;}
+    .hero img:nth-child(2){animation-delay:6s;}
+    .hero img:nth-child(3){animation-delay:12s;}
+    .hero img:nth-child(4){animation-delay:18s;}
+    .hero img:nth-child(5){animation-delay:24s;}
+    @keyframes slideShow {
+      0%{opacity:0;}
+      10%{opacity:1;}
+      20%{opacity:1;}
+      30%{opacity:0;}
+      100%{opacity:0;}
+    }
+
+    .hero-text {
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      color:#fff;
+      text-align:center;
+      background:rgba(0,0,0,0.4);
+      padding:10px 20px;
+      border-radius:5px;
+    }
+    .hero-text h1 { font-size:28px; margin-bottom:8px; }
+    .hero-text p { font-size:16px; color:#ffdd00; }
+
+    /* Destinations */
+    .destinations {
+      padding:50px 20px;
+      text-align:center;
+    }
+    .destinations h2 {
+      font-size:30px;
+      margin-bottom:30px;
+      position:relative;
+      color:#333;
+    }
+    .destinations h2::after {
+      content:"";
+      display:block;
+      margin:10px auto;
+      width:60px; height:3px;
+      background:linear-gradient(90deg,#00b4d8,#7209b7);
+    }
+
+    .card-container {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:20px;
+    }
+    .card {
+      background:#fff;
+      border-radius:12px;
+      overflow:hidden;
+      width:280px;
+      box-shadow:0 3px 10px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+    .card:hover { transform:translateY(-8px); box-shadow:0 6px 18px rgba(0,0,0,0.2); }
+    .card img {
+      width:100%; height:180px;
+      object-fit:cover;
+    }
+    .card h3 { margin:12px; color:#00b4d8; font-size:18px; }
+    .card p { margin:0 12px 10px; font-size:14px; color:#555; }
+    .price {
+      font-weight:bold; color:#7209b7;
+      margin:0 12px 12px;
+    }
+    .btn {
+      display:inline-block;
+      margin:10px 12px;
+      padding:6px 12px;
+      background:#00b4d8;
+      color:#fff;
+      border-radius:20px;
+      font-size:14px;
+      text-decoration:none;
+      transition:0.3s;
+    }
+    .btn:hover { background:#7209b7; }
+
+    /* Footer */
+    footer {
+      background:linear-gradient(90deg,#7209b7,#00b4d8);
+      color:#fff;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+    }
+    footer a { color:#ffdd00; margin:0 6px; text-decoration:none; }
+    footer a:hover { color:#fff; }
+
+    /* Responsive */
+    @media(max-width:768px){
+      nav{flex-direction:column;align-items:flex-start;}
+      nav ul{flex-direction:column;gap:10px;margin-top:8px;}
+      .hero-text h1{font-size:22px;}
+      .card{width:90%;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Travel Explorer</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Slideshow -->
+  <div class="hero">
+    <img src="paris.jpeg" alt="Paris">
+    <img src="maldives.jpeg" alt="Maldives">
+    <img src="tokyo.jpeg" alt="Tokyo">
+    <img src="dubai.jpeg" alt="Dubai">
+    <img src="rome.jpeg" alt="Rome">
+    <div class="hero-text">
+      <h1>Our Packages</h1>
+      <p>Find your perfect trip 🌍</p>
+    </div>
+  </div>
+
+  <!-- Destinations Section -->
+  <section class="destinations">
+    <h2>Travel Packages</h2>
+    <div class="card-container">
+
+      <!-- Your Cards (kept intact, just cleaned styles) -->
+      <div class="card">
+        <img src="paris.jpeg" alt="Paris">
+        <h3>Paris Getaway</h3>
+        <p>Enjoy the Eiffel Tower, Louvre, and fine dining.</p>
+        <p class="price">₹146,125 / 5 Days</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+
+      <div class="card">
+        <img src="maldives.jpeg" alt="Maldives">
+        <h3>Maldives Escape</h3>
+        <p>Stay in water villas and relax by turquoise seas.</p>
+        <p class="price">₹189,963 / 6 Days</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+
+      <div class="card">
+        <img src="tokyo.jpeg" alt="Tokyo">
+        <h3>Tokyo Adventure</h3>
+        <p>Blend of modern wonders and traditional culture.</p>
+        <p class="price">₹264,278 / 7 Days</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+
+      <div class="card">
+        <img src="dubai.jpeg" alt="Dubai">
+        <h3>Dubai Luxury</h3>
+        <p>Desert safaris, shopping, and luxury skyscrapers.</p>
+        <p class="price">₹100,000 / 5 Days</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+
+      <div class="card">
+        <img src="rome.jpeg" alt="Rome">
+        <h3>Rome Discovery</h3>
+        <p>Explore the Colosseum, Vatican City & ancient history.</p>
+        <p class="price">₹150,000 / 6 Days</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+
+      <div class="card">
+        <img src="newyork.jpeg" alt="New York">
+        <h3>New York Lights</h3>
+        <p>Times Square, Statue of Liberty & Broadway nights.</p>
+        <p class="price">₹200,000 / 5 Days</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+
+      <div class="card">
+        <img src="sydney.jpeg" alt="Sydney">
+        <h3>Sydney Explorer</h3>
+        <p>Opera House, beaches & iconic harbour views.</p>
+        <p class="price">₹140,000 / 6 Days</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+
+      <div class="card">
+        <img src="london.jpeg" alt="London">
+        <h3>London Classics</h3>
+        <p>Big Ben, London Eye & royal history.</p>
+        <p class="price">₹250,000 / 5 Days</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+
+      <div class="card">
+        <img src="cairo.jpeg" alt="Cairo">
+        <h3>Cairo Mysteries</h3>
+        <p>Visit the Pyramids, Sphinx & Egyptian museums.</p>
+        <p class="price">₹100,000 / 6 Days</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+
+      <div class="card">
+        <img src="bali.jpeg" alt="Bali Beach">
+        <h3>Bali Retreat</h3>
+        <p>Relax at beaches, temples & tropical resorts.</p>
+        <p class="price">₹260,000 / 5 Days</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+
+      <div class="card">
+        <img src="istanbul.jpeg" alt="Istanbul">
+        <h3>Istanbul Charm</h3>
+        <p>Blend of East & West with mosques & bazaars.</p>
+        <p class="price">₹100,000 / 6 Days</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+
+      <div class="card">
+        <img src="thailand.jpeg" alt="Thailand">
+        <h3>Thailand Escape</h3>
+        <p>Experience vibrant cities, stunning beaches & rich culture.</p>
+        <p class="price">₹280,000 / 6 Days</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>📧 Contact us: travel.explorer@email.com</p>
+    <p>
+      <a href="#">Instagram</a> | 
+      <a href="#">Facebook</a> | 
+      <a href="#">Twitter</a>
+    </p>
+    <p>© 2025 Travel Explorer. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

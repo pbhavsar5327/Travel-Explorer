@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Travel Explorer</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+
+    body{background:#fdfdfd;color:#333;}
+
+    /* Navbar */
+    nav{
+      background:linear-gradient(135deg,#00b4d8,#7209b7);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:12px 20px;
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+    nav .logo{color:#fff;font-size:20px;font-weight:bold;}
+    nav ul{list-style:none;display:flex;gap:20px;}
+    nav ul li a{color:#fff;text-decoration:none;font-size:15px;padding:5px 8px;}
+    nav ul li a:hover{color:#ffdd00;}
+
+    /* Hero Slideshow */
+    .hero{
+      position:relative;
+      height:50vh;
+      width:100%;
+      overflow:hidden;
+    }
+    .hero img{
+      width:100%;
+      height:50vh;
+      object-fit:cover;
+      position:absolute;
+      top:0;
+      left:0;
+      opacity:0;
+      animation:slideShow 30s infinite;
+    }
+    .hero img:nth-child(1){animation-delay:0s;}
+    .hero img:nth-child(2){animation-delay:6s;}
+    .hero img:nth-child(3){animation-delay:12s;}
+    .hero img:nth-child(4){animation-delay:18s;}
+    .hero img:nth-child(5){animation-delay:24s;}
+
+    @keyframes slideShow{
+      0%{opacity:0;}
+      10%{opacity:1;}
+      20%{opacity:1;}
+      30%{opacity:0;}
+      100%{opacity:0;}
+    }
+
+    .hero-text{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      color:#fff;
+      text-align:center;
+      background:rgba(0,0,0,0.4);
+      padding:10px 20px;
+      border-radius:5px;
+    }
+    .hero-text h1{font-size:28px;margin-bottom:10px;}
+    .hero-text p{font-size:16px;color:#ffdd00;}
+
+    /* About Sections */
+    .about-section{
+      padding:50px 10%;
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      justify-content:center;
+    }
+    .about-card{
+      flex:1 1 280px;
+      background:#fff;
+      border-radius:10px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.2);
+      padding:20px;
+      transition:0.3s;
+    }
+    .about-card:hover{transform:translateY(-5px);}
+    .about-card h2{color:#00b4d8;margin-bottom:10px;}
+    .about-card p{font-size:14px;color:#555;line-height:1.6;}
+
+    /* Footer */
+    footer{
+      background:linear-gradient(135deg,#7209b7,#00b4d8);
+      color:#fff;
+      text-align:center;
+      padding:20px;
+      margin-top:30px;
+    }
+    footer a{color:#ffdd00;margin:0 5px;text-decoration:none;}
+    footer a:hover{color:white;}
+
+    /* Responsive */
+    @media(max-width:768px){
+      nav{flex-direction:column;align-items:flex-start;}
+      nav ul{flex-direction:column;gap:10px;margin-top:8px;}
+      .hero-text h1{font-size:20px;}
+      .about-section{padding:30px 5%;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Travel Explorer</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destination.html">Destinations</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Slideshow -->
+  <div class="hero">
+    <img src="paris.jpeg" alt="Paris">
+    <img src="rome.jpeg" alt="Rome">
+    <img src="tokyo.jpeg" alt="Tokyo">
+    <img src="dubai.jpeg" alt="Dubai">
+    <img src="newyork.jpeg" alt="New York">
+    <div class="hero-text">
+      <h1>About Travel Explorer</h1>
+      <p>Discover, Explore, and Experience the World</p>
+    </div>
+  </div>
+
+  <!-- About Info Sections -->
+  <section class="about-section">
+    <div class="about-card">
+      <h2>Our Mission</h2>
+      <p>To inspire people to travel, explore new cultures, and create unforgettable memories worldwide.</p>
+    </div>
+    <div class="about-card">
+      <h2>Our Vision</h2>
+      <p>We aim to become the most trusted travel guide for students and young explorers, providing authentic and exciting travel experiences.</p>
+    </div>
+    <div class="about-card">
+      <h2>Why Choose Us</h2>
+      <p>We provide curated travel tips, best destinations, real experiences, and helpful guides for planning safe and memorable trips.</p>
+    </div>
+    <div class="about-card">
+      <h2>Privacy & Policy</h2>
+      <p>Your privacy is important to us. Travel Explorer ensures that your personal details are kept secure and are never shared with third parties. We use collected information only for providing better travel recommendations and improving your user experience.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>📧 Contact us: travel.explorer@email.com</p>
+    <p>
+      <a href="#">Instagram</a> | 
+      <a href="#">Facebook</a> | 
+      <a href="#">Twitter</a>
+    </p>
+    <p>© 2025 Travel Explorer. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
